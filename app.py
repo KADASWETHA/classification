@@ -42,16 +42,16 @@ def base_model():
 
 st.markdown(heading_style, unsafe_allow_html=True)
 Gender=st.selectbox('Select your gender',['Male','Female'])
-Married=st.selectbox('Married ?',['Yes','No'])
-Dependents=st.slider('Dependents',0,3,0)
-Education=st.selectbox('Ed',['Graduate','Not Graduate'])
-Self_Employed=st.selectbox('self',['Yes','No'])
-ApplicantIncome=st.number_input('appki', min_value=0)
-CoapplicantIncome=st.number_input('coap', min_value=0)
-LoanAmount=st.number_input('laon am',min_value=0)
-Loan_Amount_Term=st.number_input('lmt',min_value=0)
-Credit_History=st.slider('creh',0,1,0)
-Property_Area=st.selectbox('property',['Urban','Rural','Semiurban'])
+Married=st.selectbox('Are you Married ?',['Yes','No'])
+Dependents=st.slider('Count of Dependents',0,3,0)
+Education=st.selectbox('Educational status',['Graduate','Not Graduate'])
+Self_Employed=st.selectbox('Employment Status',['Yes','No'])
+ApplicantIncome=st.number_input('What is your Applicant Income ?', min_value=0)
+CoapplicantIncome=st.number_input('what much is your Applicant Income ?', min_value=0)
+LoanAmount=st.number_input('What is your loan amount ?',min_value=0)
+Loan_Amount_Term=st.number_input('What is your loan amount term ?',min_value=0)
+Credit_History=st.slider('What is your credit history ?',0,1,0)
+Property_Area=st.selectbox('Waht is your property area ?',['Urban','Rural','Semiurban'])
 df=return_df(Gender,
     Married,
     Dependents,
