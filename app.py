@@ -2,12 +2,35 @@ import streamlit as st
 import os
 import pandas as pd
 import joblib as jb
-
-heading_style = '''
-<div style="color:red;" align='center'>
-<h1>Loan Amount Prediction System</h1>
-</div>
+glowing_text_style = '''
+    <style>
+        .glowing-text {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 33px;
+            text-align: center;
+            animation: glowing 2s infinite;
+        }
+        
+        @keyframes glowing {
+            0% { color: #FF9933; } /* Saffron color */
+            10% { color: #FFD700; } /* Gold color */
+            20% { color: #FF1493; } /* Deep Pink */
+            30% { color: #00FF00; } /* Lime Green */
+            40% { color: #FF4500; } /* Orange Red */
+            50% { color: #9400D3; } /* Dark Violet */
+            60% { color: #00BFFF; } /* Deep Sky Blue */
+            70% { color: #FF69B4; } /* Hot Pink */
+            80% { color: #ADFF2F; } /* Green Yellow */
+            90% { color: #1E90FF; } /* Dodger Blue */
+            100% { color: #FF9933; } /* Saffron color */
+        }
+    </style>
 '''
+
+
+st.markdown(glowing_text_style, unsafe_allow_html=True)
+st.markdown(f'<p class="glowing-text">Loan Amount Prediction</p>', unsafe_allow_html=True)
+
 def return_df(Gender,
     Married,
     Dependents,
@@ -40,7 +63,7 @@ def base_model():
     bmodel=jb.load(os.path.join('finalised_rf_model.pkl'))
     return bmodel
 
-st.markdown(heading_style, unsafe_allow_html=True)
+
 Gender=st.selectbox('Select your gender',['Male','Female'])
 Married=st.selectbox('Are you Married ?',['Yes','No'])
 Dependents=st.slider('Count of Dependents',0,3,0)
