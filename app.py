@@ -73,7 +73,7 @@ ApplicantIncome=st.number_input('What is your Applicant Income ?', min_value=0)
 CoapplicantIncome=st.number_input('How much is your Co-Applicant Income ?', min_value=0)
 LoanAmount=st.number_input('What is your loan amount ?',min_value=0)
 Loan_Amount_Term=st.number_input('What is your loan amount term ?',min_value=0)
-Credit_History=st.slider('What is your credit history ?',0,1,0)
+Credit_History=st.selectbox('Do you have a credit history ?',['Yes','No'])
 Property_Area=st.selectbox('Waht is your property area ?',['Urban','Rural','Semiurban'])
 df=return_df(Gender,
     Married,
